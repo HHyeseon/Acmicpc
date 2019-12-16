@@ -1,8 +1,8 @@
-package bj1016;
+package Acmicpc;
 
 import java.io.*;
 import java.util.StringTokenizer;
-public class Main {
+public class bj1016 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -19,19 +19,24 @@ public class Main {
 			long square=i*i;		//제곱수
 			if(square>max)
 				break;
-			long s= min%square==0? min/square : (min/square)+1;  //min보다 큰 제곱수 중에서 시작값을 구함
+		//	long s= min%square==0? min/square : (min/square)*square;  //min보다 큰 제곱수 중에서 시작값을 구함
 			
-			while(s<=min)
+		//	long s = ((min)/(square))*square;
+			long s= min%square==0? min/square : (min/square)*square;  
+			while(s<min)
 				s+=square;
 			
 			while(s<=max) {
 				check[(int)(max-s)] = true;
 				s+=square;
 			}
+			
+			
+			 
 		}
 			
 			int count=0;
-			for(int j=0; j<=(int)max-min; ++j) {
+			for(int j=0; j<(int)(max-min)+1; ++j) {
 				if(!check[j])
 					count++;
 			}
@@ -44,3 +49,4 @@ public class Main {
 	}
 
 }
+
