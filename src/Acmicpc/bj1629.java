@@ -14,12 +14,14 @@ public class bj1629 {
 		int mul=(a%mod);
 		
 		while(b>0) {
-			if(b%mod == 1) {
+			if(b%2 == 1) {
 				result *= mul;
 				result %= mod;
 				
-			}
-			result= (mul%mod)*(mul%mod)%mod;
+			} 
+			mul= ((mul%mod)*(mul%mod))%mod;
+			//mul=(mul*mod)%mod;
+		
 			b/=2;
 		}
 		System.out.print(result);
