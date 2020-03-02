@@ -1,0 +1,28 @@
+package Acmicpc;
+
+import java.util.*;
+import java.math.*;
+
+public class bj2193 {
+
+	public static void main(String args[]) {
+		Scanner input= new Scanner(System.in);
+		int n= input.nextInt();
+		int[][]a= new int[n+1][3];
+		
+		a[1][0]=0;
+		a[1][1]=1;
+		
+		for(int i=2; i<=n; ++i) {
+			
+			a[i][0]= a[i-1][1]+a[i-1][0];
+			a[i][1]= a[i-1][0];
+		}
+		
+		int ans= a[n][0]+a[n][1];
+		System.out.println(ans);
+		
+
+
+	}
+}
