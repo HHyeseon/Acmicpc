@@ -7,7 +7,7 @@ public class bj15649 {
 	
 	
 	static void go(int index, int n, int m) {
-		if(index== m)	{	//길이(index)가 m이 되면 결과를 출력
+		if(index>= m)	{	//길이(index)가 m이 되면 결과를 출력
 			
 			for(int i=0; i<m; ++i) {
 				System.out.print(a[i]);
@@ -24,7 +24,7 @@ public class bj15649 {
 				continue;
 			
 			check[i]= true;
-			a[index]= i;
+			a[index]= i;	
 			
 			go(index+1, n, m);
 			check[i]= false;
