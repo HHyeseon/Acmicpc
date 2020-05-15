@@ -14,7 +14,7 @@ public class bj10972{
 
 		int j= a.length-1;
 		
-		while(j>0 && a[j]<a[j-1])
+		while(a[j]<=a[j-1])
 			j -=1;
 		
 		int temp= a[index-1];		//다음 순열로 넘어가기 위해서 index위치와 j위치를 교환
