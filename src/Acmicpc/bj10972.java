@@ -1,12 +1,12 @@
 package Acmicpc;
 
 import java.util.*;
-public class bj10972{
+public class bj10972 {
 
 	static boolean permutation(int[]a) { 
 		int index= a.length-1;
 
-		while(index>0 && a[index]<=a[index-1])
+		while(index>0 && a[index]<=a[index-1])	
 			index -=1;
 
 		if(index<=0)		//마지막 순열일 경우(순열이 전부 내림차순일경우)
@@ -14,7 +14,7 @@ public class bj10972{
 
 		int j= a.length-1;
 		
-		while(a[j]<=a[j-1])
+		while(a[j]<=a[index-1])
 			j -=1;
 		
 		int temp= a[index-1];		//다음 순열로 넘어가기 위해서 index위치와 j위치를 교환
